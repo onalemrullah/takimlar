@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+    }
+    section:nth-child(1){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    img{
+        margin: 50px;
+        height: 200px;
+        width: 175px;
+    }
+    section:nth-child(2){
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+   input{
+       height: 60px;
+       width: 150px;
+       border-radius: 10px;
+       cursor: pointer;
+   }
+</style>
+<body>
+    <section>
+        <img id="s1" src="resimler/kupa.jpg">
+        <img id="s2" src="resimler/kupa.jpg">
+        <img id="s3" src="resimler/kupa.jpg">
+    </section>
+    <section>
+     <input type="button" onclick="oyna()" value="OYNA">
+    </section>
+</body>
+<script>
+     
+      function oyna(){
+
+    let s1=document.getElementById("s1");
+    let s2=document.getElementById("s2");
+    let s3=document.getElementById("s3");
+
+     let takımlar=["resimler/bjk.png","resimler/fb.png","resimler/gs.png","resimler/ts.png"];
+     let f1=Math.round(Math.random()*3);
+     s1.src=takımlar[f1];
+     let f2=Math.round(Math.random()*3);
+     s2.src=takımlar[f2];
+     let f3=Math.round(Math.random()*3);
+     s3.src=takımlar[f3];
+       
+        if (f1==f2 && f1==f3){
+            alert("Şampiyon");
+        }
+        else{
+
+        }
+       
+      }
+</script>
+</html>
